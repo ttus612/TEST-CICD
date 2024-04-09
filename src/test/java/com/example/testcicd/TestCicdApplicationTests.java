@@ -13,27 +13,21 @@ import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 
-//@SpringBootTest
+@SpringBootTest
 //@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TestCicdApplicationTests {
-
-    @Test
-    public void canRunApplication() {
-        TestCicdApplication.main(new String[]{});
-    }
-
 //    @Autowired
 //    private ProductRepository productRepository;
-//
-//
-//    @Test
+
+
+    @Test
 //    @Order(1)
 //    @Rollback(value = false)
-//    void contextLoads() {
+    void contextLoads() {
 //        System.out.println("Start server successfully");
-//
-//    }
-//
+
+    }
+
 //    @Test
 //    @Order(2)
 //    @Rollback(value = false)
