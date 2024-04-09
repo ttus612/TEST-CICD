@@ -20,13 +20,13 @@ class TestCicdApplicationTests {
     private ProductRepository productRepository;
 
 
-//    @Test
-//    @Order(1)
-//    @Rollback(value = false)
-//    void contextLoads() {
-//        System.out.println("Start server successfully");
-//
-//    }
+    @Test
+    @Order(1)
+    @Rollback(value = false)
+    void contextLoads() {
+        System.out.println("Start server successfully");
+
+    }
 
     @Test
     @Order(2)
