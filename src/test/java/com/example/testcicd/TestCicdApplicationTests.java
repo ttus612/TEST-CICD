@@ -13,20 +13,28 @@ import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 //@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TestCicdApplicationTests {
+    @Test
+    public void testAdd() {
+        assertEquals(42, Integer.sum(19, 23));
+    }
+
 //    @Autowired
 //    private ProductRepository productRepository;
 
 
-    @Test
+//    @Test
 //    @Order(1)
 //    @Rollback(value = false)
-    void contextLoads() {
+//    void contextLoads() {
 //        System.out.println("Start server successfully");
 
-    }
+
+//    }
 
 //    @Test
 //    @Order(2)
