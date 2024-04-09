@@ -16,7 +16,7 @@ public class ProductController {
     @PostMapping("/save")
     public Product addProduct(@RequestBody Product product){
         return productRepository.save(product);
-    }}
+    }
 
     @GetMapping("/products")
     public List<Product> getAllProduct(){
