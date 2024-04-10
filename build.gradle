@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.4'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'jvm-test-suite'
 }
 
 group = 'com.example'
@@ -26,6 +27,30 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+testing {
+    suites {
+        test {
+            useJUnitJupiter()
+        }
+
+        integrationTest(JvmTestSuite) {
+            dependencies {
+                implementation project()
+            }
+
+            targets {
+                all {
+                    testTask.configure {
+                        shouldRunAfter(test)
+                    }
+                }
+            }
+        }
+    }
 }
+
+tasks.named('test') {
+//    useJUnitPlatform()
+    dependsOn(testing.suites.integrationTest)
+}
+
